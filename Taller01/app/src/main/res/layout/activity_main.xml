@@ -51,6 +51,7 @@
                 android:layout_below="@id/editTextNumber"
                 android:layout_centerHorizontal="true"
                 android:layout_marginHorizontal="20dp"
+                android:onClick="onFactBtnClick"
                 android:text="FACTORIAL" />
 
             <Spinner
@@ -59,7 +60,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/button3"
                 android:layout_centerHorizontal="true"
-                android:dropDownWidth="wrap_content" />
+                android:dropDownWidth="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:entries="@array/factorial_spinner"/>
 
             <Button
                 android:id="@+id/button4"
