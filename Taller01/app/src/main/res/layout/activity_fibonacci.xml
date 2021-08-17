@@ -12,12 +12,15 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/imageView"
+        <ImageButton
+            android:id="@+id/imageButton"
             android:layout_width="wrap_content"
             android:layout_height="1dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/fibo" />
+            android:background="#ffffff"
+            android:onClick="onImgBtnClick"
+            android:scaleType="fitCenter"
+            android:src="@drawable/fibonacci2" />
 
         <ListView
             android:id="@+id/fibo_list"

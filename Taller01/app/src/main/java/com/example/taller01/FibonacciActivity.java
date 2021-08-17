@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -16,7 +18,7 @@ import java.util.ArrayList;
 public class FibonacciActivity extends Activity{
     private ArrayList<String> fiboList = new ArrayList<String>();
     ListView lv;
-    ImageView iv;
+
     ArrayAdapter<String> adapter;
     @Override
     protected void onCreate(Bundle icicle) {
@@ -24,12 +26,16 @@ public class FibonacciActivity extends Activity{
         setContentView(R.layout.activity_fibonacci);
         Intent intent = getIntent();
         lv = (ListView)findViewById(R.id.fibo_list);
-        iv = (ImageView)findViewById(R.id.imageView);
+
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         fiboList = fibonacci(Integer.valueOf(message));
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, fiboList);
         lv.setAdapter(adapter);
-        iv.setImageResource(R.drawable.fibonacci2);
+    }
+    public void onImgBtnClick(View view){
+        String url = "https://es.wikipedia.org/wiki/fibonacci";
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(browserIntent);
     }
     public static ArrayList<String> fibonacci (Integer max) {
         ArrayList<String> fiboAux = new ArrayList<String>();
