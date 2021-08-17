@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Taller01">
-        <activity android:name=".FactorialActivity"></activity>
+        <activity android:name=".CountriesActivity"></activity>
+        <activity android:name=".FactorialActivity" />
         <activity android:name=".FibonacciActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

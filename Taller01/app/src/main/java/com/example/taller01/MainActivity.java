@@ -17,10 +17,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button fiboBtn = (Button) findViewById(R.id.fiboBtn);
     }
     public void onFiboBtnClick(View view){
+        Button fiboBtn = (Button) findViewById(R.id.fiboBtn);
         fibonacci_counter++;
+        fiboBtn.setText("FIBONACCI: " + Integer.toString(fibonacci_counter));
         Intent intent = new Intent(this, FibonacciActivity.class);
         EditText editText = (EditText) findViewById(R.id.editTextNumber);
         String message = editText.getText().toString();
@@ -28,7 +29,20 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void onFactBtnClick(View view){
+        Button factBtn = (Button) findViewById(R.id.button3);
+        fact_counter++;
+        factBtn.setText("FACTORIAL: " + Integer.toString(fact_counter));
         Intent intent = new Intent(this, FactorialActivity.class);
+        Spinner mySpinner = (Spinner) findViewById(R.id.spinner);
+        String message = mySpinner.getSelectedItem().toString();
+        intent.putExtra(EXTRA_MESSAGE,message);
+        startActivity(intent);
+    }
+    public void onCountriesBtnClick(View view){
+        Button factBtn = (Button) findViewById(R.id.button4);
+
+        //factBtn.setText("FACTORIAL: " + Integer.toString(fact_counter));
+        Intent intent = new Intent(this, CountriesActivity.class);
         Spinner mySpinner = (Spinner) findViewById(R.id.spinner);
         String message = mySpinner.getSelectedItem().toString();
         intent.putExtra(EXTRA_MESSAGE,message);
