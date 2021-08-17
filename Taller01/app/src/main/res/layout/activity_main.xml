@@ -42,7 +42,8 @@
                 android:layout_below="@id/fiboBtn"
                 android:layout_centerHorizontal="true"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:text="1" />
 
             <Button
                 android:id="@+id/button3"

@@ -15,15 +15,15 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_height="1dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/fibo" />
 
         <ListView
-            android:id="@android:id/list"
+            android:id="@+id/fibo_list"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="2" />
+            android:layout_weight="3" />
     </LinearLayout>
 
 </ScrollView>

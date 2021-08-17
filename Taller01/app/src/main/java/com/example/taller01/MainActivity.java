@@ -12,11 +12,14 @@ import android.widget.Spinner;
 public class MainActivity extends AppCompatActivity {
     private int fibonacci_counter = 0;
     private int fact_counter = 0;
+    private int countries_counter = 0;
     public static final String EXTRA_MESSAGE = "com.example.taller01.MESSAGE";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        EditText editText = (EditText) findViewById(R.id.editTextNumber);
+        editText.setText("1");
     }
     public void onFiboBtnClick(View view){
         Button fiboBtn = (Button) findViewById(R.id.fiboBtn);
@@ -39,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void onCountriesBtnClick(View view){
-        Button factBtn = (Button) findViewById(R.id.button4);
-
-        //factBtn.setText("FACTORIAL: " + Integer.toString(fact_counter));
+        Button countriesBtn = (Button) findViewById(R.id.button4);
+        countries_counter++;
+        countriesBtn.setText("COUNTRIES: " + Integer.toString(countries_counter));
         Intent intent = new Intent(this, CountriesActivity.class);
         Spinner mySpinner = (Spinner) findViewById(R.id.spinner);
         String message = mySpinner.getSelectedItem().toString();
