@@ -52,13 +52,15 @@ public class Singup extends AppCompatActivity {
                 onSignup();
             }
         });
+
+        Intent intent = new Intent(Singup.this,MyIntentService.class);
+        startService(intent);
     }
 
     @Override
     protected void onStart() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
-
         super.onStart();
     }
 

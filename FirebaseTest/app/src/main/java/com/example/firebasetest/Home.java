@@ -62,6 +62,10 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        Intent intent = new Intent(Home.this, MyIntentService.class);
+        intent.putExtra("milliSeconds", 5000);
+        MyIntentService.enqueueWork(Home.this, intent);
+        Log.i("TAG", "After the call to the service");
     }
 
     @Override
